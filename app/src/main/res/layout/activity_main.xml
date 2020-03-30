@@ -22,11 +22,11 @@
         app:layout_constraintTop_toBottomOf="@+id/title_intro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/goto_add_newt_ask_btn"
+        app:layout_constraintBottom_toTopOf="@id/goto_add_new_task_btn1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <Button
-        android:id="@+id/goto_add_newt_ask_btn"
+        android:id="@+id/goto_add_new_task_btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADD NEW TASK"
