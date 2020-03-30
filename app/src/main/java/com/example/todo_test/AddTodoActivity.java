@@ -41,7 +41,7 @@ public class AddTodoActivity extends AppCompatActivity {
 
                 Task task = new Task(title,description,Status.TODO);
                 DataManager.getInstance().addTask(task);
-
+                counter = 0;
             }
         });
 
@@ -50,12 +50,15 @@ public class AddTodoActivity extends AppCompatActivity {
         goBackToListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (titleEt.getText().toString().equals("") || descriptionEt.getText().toString().equals("")) {
-                   if (counter == 0){
-                       Toast.makeText(AddTodoActivity.this, "If you go back you'll lose data", Toast.LENGTH_SHORT).show();
-                       counter = 1;
-                       return;
-                   }
+                if (titleEt.getText().toString().equals("") && descriptionEt.getText().toString().equals("")) {
+                   finish();
+                   } else {
+                    if (counter == 0){
+                        Toast.makeText(AddTodoActivity.this, "If you go back you'll lose data", Toast.LENGTH_SHORT).show();
+                        counter = 1;
+                        return;
+                }
+
                 }
                 counter = 0;
                 finish();
