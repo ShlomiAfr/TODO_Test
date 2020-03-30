@@ -14,6 +14,7 @@ public class AddTodoActivity extends AppCompatActivity {
 
     Button addTaskBtn, goBackToListBtn;
     EditText titleEt, descriptionEt;
+    int counter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +46,18 @@ public class AddTodoActivity extends AppCompatActivity {
         });
 
         goBackToListBtn = findViewById(R.id.go_back_to_list);
+
         goBackToListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (titleEt.getText().toString().equals("") || descriptionEt.getText().toString().equals("")) {
+                   if (counter == 0){
+                       Toast.makeText(AddTodoActivity.this, "If you go back you'll lose data", Toast.LENGTH_SHORT).show();
+                       counter = 1;
+                       return;
+                   }
+                }
+                counter = 0;
                 finish();
             }
         });
