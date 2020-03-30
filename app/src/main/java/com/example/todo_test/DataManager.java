@@ -21,6 +21,10 @@ public class DataManager {
         return instance;
     }
 
+    public List<Task> getToDoList() {
+        return toDoList;
+    }
+
     public void addTask(Task task){
         toDoList.add(task);
     }
